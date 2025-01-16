@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="action_report_audit_program" model="ir.actions.report">
+        <field name="name">Audit Program Report</field>
+        <field name="model">audit.program</field>
+        <field name="report_type">qweb-pdf</field>
+        <field name="report_name">audit_management.report_audit_program</field>
+        <field name="report_file">audit_management.report_audit_program</field>
+        <field name="binding_model_id" ref="model_audit_program"/>
+        <field name="binding_type">report</field>
+    </record>
+
+    <record id="action_audit_finding_xlsx" model="ir.actions.report">
+        <field name="name">Audit Findings Excel Report</field>
+        <field name="model">audit.finding</field>
+        <field name="report_type">xlsx</field>
+        <field name="report_name">audit_management.audit_finding_xlsx</field>
+        <field name="report_file">audit_management.audit_finding_xlsx</field>
+        <field name="binding_model_id" ref="model_audit_finding"/>
+        <field name="binding_type">report</field>
+    </record>

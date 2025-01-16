@@ -1,0 +1,11 @@
+{
+  "name": "audit-management",
+  "version": "1.0.0",
+  "description": "Audit Management Module for Odoo 18",
+  "private": true,
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "bootstrap": "^5.3.2",
+    "openai": "^4.0.0"
+  }
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <template id="report_audit_program">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Audit Program Report</h2>
+                        <div class="row mt-4">
+                            <div class="col-6">
+                                <strong>Program Name:</strong>
+                                <span t-field="o.name"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>Code:</strong>
+                                <span t-field="o.code"/>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-6">
+                                <strong>Start Date:</strong>
+                                <span t-field="o.start_date"/>
+                            </div>
+                            <div class="col-6">
+                                <strong>End Date:</strong>
+                                <span t-field="o.end_date"/>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <strong>Objective:</strong>
+                                <p t-field="o.objective"/>
+                            </div>
+                        </div>
+                        <div class="row mt-3">
+                            <div class="col-12">
+                                <strong>Scope:</strong>
+                                <p t-field="o.scope"/>
+                            </div>
+                        </div>
+                        <h3 class="mt-4">Planned Audits</h3>
+                        <table class="table table-bordered mt-3">
+                            <thead>
+                                <tr>
+                                    <th>Audit Name</th>
+                                    <th>Planned Date</th>
+                                    <th>Duration</th>
+                                    <th>Status</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-foreach="o.planned_audits" t-as="audit">
+                                    <tr>
+                                        <td><span t-field="audit.name"/></td>
+                                        <td><span t-field="audit.planned_date"/></td>
+                                        <td><span t-field="audit.duration"/> days</td>
+                                        <td><span t-field="audit.state"/></td>
+                                    </tr>
+                                </t>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
